@@ -285,7 +285,7 @@ input:checked + .slider:before {
 form{
     justify-content: center;
     display: block;
-    width: 550px;
+    width: 580px;
     height: 650px;
     flex-direction:column;
     background:#ffffff;

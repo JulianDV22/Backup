@@ -21,7 +21,7 @@
     </div>
 
     <nav>
-        <div class="logo">
+        <div class="logo2">
             <img src="C:\Users\albee\OneDrive\Documentos\vs code\SemilleroUCO\TEQVIM\Image\Teqvim-Logo-2.png" width="80px" height="80px">
         </div>
         <div class="logo">CREAR EVENTO</div>
@@ -36,10 +36,10 @@
 
         <h1 class="title">Crear Evento</h1>
         <label class="titulo">
-            <input placeholder="Título" type="text" id="titulo">
+            <input placeholder="Título" type="text" id="titulo-evento">
         </label>
         <label class="descripcion">
-            <input placeholder="Descripcion" type="text" id="descripcion">
+            <input placeholder="Descripcion" type="text" id="descripcion-evento">
         </label>
 
         <div class="duracion">
@@ -64,7 +64,7 @@
         </div>
 
         <label class="hora">
-            <input placeholder="00:00" type="time" id="hora">
+            <input placeholder="00:00" type="time" id="horaInicial">
         </label>
         <div class="title4">
             <h4>Hora fin</h4>
@@ -110,13 +110,14 @@
         </select>
         </div>
         <div class="button">
-        <button id="button">Cancelar</button>
+        <button id="button" type="button">Cancelar</button>
         </div>
         <div class="button2">
-        <button id="button2">Crear</button>
+        <button  id="button2" type="submit">Crear</button>
         </div>
     </form>
-
-    <script src="main.js"></script>
+    <script src="eventoMain.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="axios.js"></script>
 </body>
 </html>
