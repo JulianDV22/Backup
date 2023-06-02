@@ -6,7 +6,7 @@ import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 
 public class TipoDuracionEventoEntity {
-	
+
 	private static final TipoDuracionEventoEntity DEFAULT_OBJECT = new TipoDuracionEventoEntity();
 	private UUID identificador;
 	private String nombre;
@@ -24,6 +24,14 @@ public class TipoDuracionEventoEntity {
 		setIdentificador(identificador);
 		setNombre(nombre);
 		setDescripcion(descripcion);
+	}
+
+	public static final TipoDuracionEventoEntity createWithIdentificador(final UUID identificador) {
+		return new TipoDuracionEventoEntity(identificador, UtilText.EMPTY, UtilText.EMPTY);
+	}
+
+	public static final TipoDuracionEventoEntity createWithNombre(final String nombre) {
+		return new TipoDuracionEventoEntity(UtilUUID.DEFAULT_UUID, nombre, UtilText.EMPTY);
 	}
 
 	public static TipoDuracionEventoEntity getDefaultObject() {

@@ -6,12 +6,10 @@ import java.util.UUID;
 import co.edu.uco.teqvim.business.assembler.concrete.EstadoEstudianteAssembler;
 import co.edu.uco.teqvim.business.business.EstadoEstudianteBusiness;
 import co.edu.uco.teqvim.business.domain.EstadoEstudianteDomain;
-import co.edu.uco.teqvim.business.domain.EventoDomain;
 import co.edu.uco.teqvim.crosscutting.exception.TeqvimBusinessException;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 import co.edu.uco.teqvim.data.dao.factory.DAOFactory;
 import co.edu.uco.teqvim.entities.EstadoEstudianteEntity;
-import co.edu.uco.teqvim.entities.EventoEntity;
 
 public final class EstadoEstudianteBusinessImpl implements EstadoEstudianteBusiness {
 

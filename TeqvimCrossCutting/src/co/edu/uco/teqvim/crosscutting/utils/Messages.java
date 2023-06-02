@@ -1,7 +1,5 @@
 package co.edu.uco.teqvim.crosscutting.utils;
 
-import co.edu.uco.teqvim.crosscutting.utils.Messages.TipoDuracionEventoSqlServerDAOMessages;
-
 public final class Messages {
 
 	private Messages() {

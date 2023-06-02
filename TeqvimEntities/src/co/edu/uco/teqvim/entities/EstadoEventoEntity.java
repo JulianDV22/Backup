@@ -6,7 +6,7 @@ import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 
 public class EstadoEventoEntity {
-	
+
 	private static final EstadoEventoEntity DEFAULT_OBJECT = new EstadoEventoEntity();
 	private UUID identificador;
 	private String nombre;
@@ -24,6 +24,14 @@ public class EstadoEventoEntity {
 		setIdentificador(identificador);
 		setNombre(nombre);
 		setDescripcion(descripcion);
+	}
+
+	public static final EstadoEventoEntity createWithIdentificador(final UUID identificador) {
+		return new EstadoEventoEntity(identificador, UtilText.EMPTY, UtilText.EMPTY);
+	}
+
+	public static final EstadoEventoEntity createWithNombre(final String nombre) {
+		return new EstadoEventoEntity(UtilUUID.DEFAULT_UUID, nombre, UtilText.EMPTY);
 	}
 
 	public static EstadoEventoEntity getDefaultObject() {

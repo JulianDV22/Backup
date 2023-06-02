@@ -26,6 +26,14 @@ public class TipoEventoEntity {
 		setDescripcion(descripcion);
 	}
 
+	public static final TipoEventoEntity createWithIdentificador(final UUID identificador) {
+		return new TipoEventoEntity(identificador, UtilText.EMPTY, UtilText.EMPTY);
+	}
+
+	public static final TipoEventoEntity createWithNombre(final String nombre) {
+		return new TipoEventoEntity(UtilUUID.DEFAULT_UUID, nombre, UtilText.EMPTY);
+	}
+
 	public static TipoEventoEntity getDefaultObject() {
 		return DEFAULT_OBJECT;
 	}

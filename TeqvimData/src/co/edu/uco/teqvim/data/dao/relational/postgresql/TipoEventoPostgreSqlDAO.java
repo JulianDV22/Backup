@@ -12,11 +12,9 @@ import co.edu.uco.teqvim.crosscutting.exception.TeqvimException;
 import co.edu.uco.teqvim.crosscutting.utils.UtilObject;
 import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
-import co.edu.uco.teqvim.crosscutting.utils.Messages.TipoDocumentoSqlServerDAOMessages;
 import co.edu.uco.teqvim.crosscutting.utils.Messages.TipoEventoSqlServerDAOMessages;
 import co.edu.uco.teqvim.data.dao.TipoEventoDAO;
 import co.edu.uco.teqvim.data.dao.relational.SqlDAO;
-import co.edu.uco.teqvim.entities.TipoDocumentoEntity;
 import co.edu.uco.teqvim.entities.TipoEventoEntity;
 
 public final class TipoEventoPostgreSqlDAO extends SqlDAO<TipoEventoEntity> implements TipoEventoDAO {

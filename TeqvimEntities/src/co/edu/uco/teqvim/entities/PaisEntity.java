@@ -23,6 +23,14 @@ public class PaisEntity {
 		setNombre(nombre);
 	}
 	
+	public static final PaisEntity createWithIdentificador(final UUID identificador) {
+		return new PaisEntity(identificador, UtilText.EMPTY);
+	}
+	
+	public static final PaisEntity createWithNombre(final String nombre) {
+		return new PaisEntity(UtilUUID.DEFAULT_UUID, nombre);
+	}
+
 	public static PaisEntity getDefaultObject() {
 		return DEFAULT_OBJECT;
 	}

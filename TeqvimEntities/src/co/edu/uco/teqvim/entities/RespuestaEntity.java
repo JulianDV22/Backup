@@ -26,6 +26,14 @@ public class RespuestaEntity {
 		setDescripcion(descripcion);
 	}
 
+	public static final RespuestaEntity createWithIdentificador(final UUID identificador) {
+		return new RespuestaEntity(identificador, UtilText.EMPTY, UtilText.EMPTY);
+	}
+
+	public static final RespuestaEntity createWithNombre(final String nombre) {
+		return new RespuestaEntity(UtilUUID.DEFAULT_UUID, nombre, UtilText.EMPTY);
+	}
+
 	public static RespuestaEntity getDefaultObject() {
 		return DEFAULT_OBJECT;
 	}

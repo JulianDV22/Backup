@@ -6,7 +6,7 @@ import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 
 public class TipoDocumentoEntity {
-	
+
 	private static final TipoDocumentoEntity DEFAULT_OBJECT = new TipoDocumentoEntity();
 	private UUID identificador;
 	private String nombre;
@@ -24,6 +24,14 @@ public class TipoDocumentoEntity {
 		setIdentificador(identificador);
 		setNombre(nombre);
 		setDescripcion(descripcion);
+	}
+
+	public static final TipoDocumentoEntity createWithIdentificador(final UUID identificador) {
+		return new TipoDocumentoEntity(identificador, UtilText.EMPTY, UtilText.EMPTY);
+	}
+
+	public static final TipoDocumentoEntity createWithNombre(final String nombre) {
+		return new TipoDocumentoEntity(UtilUUID.DEFAULT_UUID, nombre, UtilText.EMPTY);
 	}
 
 	public static TipoDocumentoEntity getDefaultObject() {
