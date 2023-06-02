@@ -25,4 +25,11 @@ public final class RespuestaBusinessImpl implements RespuestaBusiness {
 		return RespuestaAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
+	@Override
+	public void register(RespuestaDomain domain) {
+		final RespuestaEntity entity = RespuestaAssembler.getInstance().toEntityFromDomain(domain);
+		daoFactory.getRespuestaDAO().create(entity);
+
+	}
+
 }

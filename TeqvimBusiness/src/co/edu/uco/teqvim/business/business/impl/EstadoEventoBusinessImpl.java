@@ -25,4 +25,11 @@ public final class EstadoEventoBusinessImpl implements EstadoEventoBusiness {
 		return EstadoEventoAssembler.getInstance().toDomainListFromEntityList(resultEntityList);
 	}
 
+	@Override
+	public void register(EstadoEventoDomain domain) {
+		final EstadoEventoEntity entity = EstadoEventoAssembler.getInstance().toEntityFromDomain(domain);
+		daoFactory.getEstadoEventoDAO().create(entity);
+		
+	}
+
 }

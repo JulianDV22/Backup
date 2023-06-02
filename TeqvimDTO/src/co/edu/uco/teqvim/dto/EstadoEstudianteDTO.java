@@ -6,11 +6,11 @@ import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 
 public class EstadoEstudianteDTO {
-	
+
 	private UUID identificador;
 	private String nombre;
 	private String descripcion;
-	
+
 	public EstadoEstudianteDTO() {
 		super();
 		setIdentificador(UtilUUID.DEFAULT_UUID);
@@ -24,7 +24,7 @@ public class EstadoEstudianteDTO {
 		setNombre(nombre);
 		setDescripcion(descripcion);
 	}
-	
+
 	public static EstadoEstudianteDTO create() {
 		return new EstadoEstudianteDTO();
 	}

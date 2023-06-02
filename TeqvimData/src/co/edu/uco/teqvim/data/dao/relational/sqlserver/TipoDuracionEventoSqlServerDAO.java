@@ -17,4 +17,10 @@ public final class TipoDuracionEventoSqlServerDAO implements TipoDuracionEventoD
 		return null;
 	}
 
+	@Override
+	public void create(TipoDuracionEventoEntity entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

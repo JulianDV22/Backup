@@ -32,7 +32,7 @@ public final class EstudianteDomain {
 		setPrimerNombre(UtilText.EMPTY);
 		setSegundoNombre(UtilText.EMPTY);
 		setPrimerApellido(UtilText.EMPTY);
-		setSegudoApellido(UtilText.EMPTY);
+		setSegundoApellido(UtilText.EMPTY);
 		setNumeroTelefonico(UtilText.EMPTY);
 		setCorreo(UtilText.EMPTY);
 		setContrasena(UtilText.EMPTY);
@@ -45,7 +45,7 @@ public final class EstudianteDomain {
 	}
 
 	public EstudianteDomain(UUID identificador, String primerNombre, String segundoNombre, String primerApellido,
-			String segudoApellido, String numeroTelefonico, String correo, String contrasena, LocalDate fechaNaciemiento,
+			String segudoApellido, String numeroTelefonico, String correo, String contrasena, LocalDate fechaNacimiento,
 			TipoDocumentoDomain tipoDocumento, String numeroDocumento, RespuestaDomain confirmacionCorreo,
 			PaisDomain pais, EstadoEstudianteDomain estado) {
 		super();
@@ -53,16 +53,16 @@ public final class EstudianteDomain {
 		setPrimerNombre(primerNombre);
 		setSegundoNombre(segundoNombre);
 		setPrimerApellido(primerApellido);
-		setSegudoApellido(segudoApellido);
+		setSegundoApellido(segudoApellido);
 		setNumeroTelefonico(numeroTelefonico);
 		setCorreo(correo);
 		setContrasena(contrasena);
-		setFechaNacimiento(fechaNaciemiento);
 		setTipoDocumento(tipoDocumento);
 		setNumeroDocumento(numeroDocumento);
 		setConfirmacionCorreo(confirmacionCorreo);
 		setPais(pais);
 		setEstado(estado);
+		setFechaNacimiento(fechaNacimiento);
 	}
 
 	public static EstudianteDomain getDefaultObject() {
@@ -105,7 +105,7 @@ public final class EstudianteDomain {
 		return segudoApellido;
 	}
 
-	private final void setSegudoApellido(final String segudoApellido) {
+	private final void setSegundoApellido(final String segudoApellido) {
 		this.segudoApellido = UtilText.getUtilText().applyTrim(segudoApellido);
 	}
 
@@ -173,11 +173,12 @@ public final class EstudianteDomain {
 		this.estado = UtilObject.getDefault(estado, EstadoEstudianteDomain.getDefaultObject());
 	}
 
-	public LocalDate getFechaNacimiento() {
+	public final LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	private void setFechaNacimiento(LocalDate fechaNacimiento) {
+	private final void setFechaNacimiento(final LocalDate fechaNacimiento) {
 		this.fechaNacimiento = UtilDate.getDefault(fechaNacimiento);
 	}
+
 }

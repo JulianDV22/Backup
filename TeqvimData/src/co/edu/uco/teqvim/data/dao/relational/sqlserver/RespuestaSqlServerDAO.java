@@ -17,4 +17,10 @@ public final class RespuestaSqlServerDAO implements RespuestaDAO {
 		return null;
 	}
 
+	@Override
+	public void create(RespuestaEntity entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

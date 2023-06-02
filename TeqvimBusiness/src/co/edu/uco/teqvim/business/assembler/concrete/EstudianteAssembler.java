@@ -23,19 +23,19 @@ public class EstudianteAssembler implements Assembler<EstudianteDomain, Estudian
 		return EstudianteDTO.create().setIdentificador(domain.getIdentificador())
 				.setPrimerNombre(domain.getPrimerNombre()).setSegundoNombre(domain.getSegundoNombre())
 				.setPrimerApellido(domain.getPrimerApellido()).setSegudoApellido(domain.getSegudoApellido())
-				.setContrasena(domain.getContrasena()).setCorreo(domain.getCorreo())
-				.setPais(PaisAssembler.getInstance().toDtoFromDomain(domain.getPais()))
-				.setConfirmacionCorreo(RespuestaAssembler.getInstance().toDtoFromDomain(domain.getConfirmacionCorreo()))
+				.setNumeroTelefonico(domain.getNumeroTelefonico()).setCorreo(domain.getCorreo())
+				.setContrasena(domain.getContrasena()).setFechaNacimiento(domain.getFechaNacimiento())
+				.setNumeroDocumento(domain.getNumeroDocumento())
 				.setTipoDocumento(TipoDocumentoAssembler.getInstance().toDtoFromDomain(domain.getTipoDocumento()))
-				.setNumeroDocumento(domain.getNumeroDocumento()).setFechaNacimiento(domain.getFechaNacimiento())
-				.setNumeroTelefonico(domain.getNumeroTelefonico())
+				.setConfirmacionCorreo(RespuestaAssembler.getInstance().toDtoFromDomain(domain.getConfirmacionCorreo()))
+				.setPais(PaisAssembler.getInstance().toDtoFromDomain(domain.getPais()))
 				.setEstado(EstadoEstudianteAssembler.getInstance().toDtoFromDomain(domain.getEstado()));
 	}
 
 	@Override
 	public EstudianteDomain toDomainFromDto(EstudianteDTO dto) {
 		return new EstudianteDomain(dto.getIdentificador(), dto.getPrimerNombre(), dto.getSegundoNombre(),
-				dto.getPrimerApellido(), dto.getSegudoApellido(), dto.getNumeroTelefonico(), dto.getCorreo(),
+				dto.getPrimerApellido(), dto.getSegundoApellido(), dto.getNumeroTelefonico(), dto.getCorreo(),
 				dto.getContrasena(), dto.getFechaNacimiento(),
 				TipoDocumentoAssembler.getInstance().toDomainFromDto(dto.getTipoDocumento()), dto.getNumeroDocumento(),
 				RespuestaAssembler.getInstance().toDomainFromDto(dto.getConfirmacionCorreo()),

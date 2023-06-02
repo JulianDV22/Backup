@@ -15,7 +15,7 @@ public class TeqvimException extends RuntimeException {
 		setType(type);
 	}
 
-	private final String getTechnicalMessage() {
+	public final String getTechnicalMessage() {
 		return UtilText.getUtilText().getDefaultIfEmpty(getMessage(), getUserMessage());
 	}
 

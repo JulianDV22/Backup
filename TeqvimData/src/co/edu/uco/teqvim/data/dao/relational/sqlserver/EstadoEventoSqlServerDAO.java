@@ -17,4 +17,10 @@ public final class EstadoEventoSqlServerDAO implements EstadoEventoDAO {
 		return null;
 	}
 
+	@Override
+	public void create(EstadoEventoEntity entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

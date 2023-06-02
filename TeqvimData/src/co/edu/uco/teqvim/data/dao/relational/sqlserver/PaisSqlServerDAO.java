@@ -17,4 +17,10 @@ public final class PaisSqlServerDAO implements PaisDAO {
 		return null;
 	}
 
+	@Override
+	public void create(PaisEntity entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

@@ -9,7 +9,7 @@ import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 
 public final class EstudianteEntity {
-	
+
 	private static final EstudianteEntity DEFAULT_OBJECT = new EstudianteEntity();
 	private UUID identificador;
 	private String primerNombre;
@@ -25,7 +25,7 @@ public final class EstudianteEntity {
 	private RespuestaEntity confirmacionCorreo;
 	private PaisEntity pais;
 	private EstadoEstudianteEntity estado;
-	
+
 	private EstudianteEntity() {
 		super();
 		setIdentificador(UtilUUID.DEFAULT_UUID);
@@ -46,7 +46,8 @@ public final class EstudianteEntity {
 
 	public EstudianteEntity(UUID identificador, String primerNombre, String segundoNombre, String primerApellido,
 			String segudoApellido, String numeroTelefonico, String correo, String contrasena, LocalDate fechaNacimiento,
-			TipoDocumentoEntity tipoDocumento, String numeroDocumento, RespuestaEntity confirmacionCorreo, PaisEntity pais, EstadoEstudianteEntity estado) {
+			TipoDocumentoEntity tipoDocumento, String numeroDocumento, RespuestaEntity confirmacionCorreo,
+			PaisEntity pais, EstadoEstudianteEntity estado) {
 		super();
 		setIdentificador(identificador);
 		setPrimerNombre(primerNombre);
@@ -63,7 +64,7 @@ public final class EstudianteEntity {
 		setPais(pais);
 		setEstado(estado);
 	}
-	
+
 	public static EstudianteEntity getDefaultObject() {
 		return DEFAULT_OBJECT;
 	}
@@ -171,14 +172,13 @@ public final class EstudianteEntity {
 	private final void setEstado(final EstadoEstudianteEntity estado) {
 		this.estado = UtilObject.getDefault(estado, EstadoEstudianteEntity.getDefaultObject());
 	}
-	
-	public LocalDate getFechaNacimiento() {
+
+	public final LocalDate getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	private void setFechaNacimiento(LocalDate fechaNacimiento) {
+	private final void setFechaNacimiento(final LocalDate fechaNacimiento) {
 		this.fechaNacimiento = UtilDate.getDefault(fechaNacimiento);
 	}
-	
 
 }

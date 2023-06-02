@@ -104,7 +104,7 @@ public final class EstudianteDTO {
 		return this;
 	}
 
-	public final String getSegudoApellido() {
+	public final String getSegundoApellido() {
 		return segudoApellido;
 	}
 
@@ -128,15 +128,6 @@ public final class EstudianteDTO {
 
 	public final EstudianteDTO setCorreo(final String correo) {
 		this.correo = UtilText.getDefaultEmail(correo);
-		return this;
-	}
-
-	public final LocalDate getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-
-	public final EstudianteDTO setFechaNacimiento(LocalDate fechaNacimiento) {
-		this.fechaNacimiento = UtilDate.getDefault(fechaNacimiento);
 		return this;
 	}
 	
@@ -193,4 +184,14 @@ public final class EstudianteDTO {
 		this.estado = UtilObject.getDefault(estado, EstadoEstudianteDTO.create());
 		return this;
 	}
+
+	public final LocalDate getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+	public final EstudianteDTO setFechaNacimiento(LocalDate fechaNacimiento) {
+		this.fechaNacimiento = UtilDate.getDefault(fechaNacimiento);
+		return this;
+	}
+	
 }

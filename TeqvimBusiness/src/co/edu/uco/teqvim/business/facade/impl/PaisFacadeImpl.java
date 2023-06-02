@@ -43,4 +43,32 @@ public final class PaisFacadeImpl implements PaisFacade{
 			daoFactory.closeConection();
 		}
 	}
+
+	@Override
+	public void register(PaisDTO dto) {
+		try {
+			final var domain = PaisAssembler.getInstance().toDomainFromDto(dto);
+
+			daoFactory.initTransaction();
+			business.register(domain);
+			daoFactory.commitTransaction();
+
+		} catch (final TeqvimException exception) {
+
+			daoFactory.cancelTransaction();
+			throw exception;
+
+		} catch (final Exception exception) {
+
+			daoFactory.cancelTransaction();
+
+			var userMessage = PaisFacadeImplMessages.REGISTER_EXCEPTION_USER_MESSAGE;
+			var technicalMessage = PaisFacadeImplMessages.REGISTER_EXCEPTION_TECHNICAL_MESSAGE;
+
+			throw TeqvimBusinessException.create(technicalMessage, userMessage, exception);
+		} finally {
+			daoFactory.closeConection();
+		}
+	}
+
 }

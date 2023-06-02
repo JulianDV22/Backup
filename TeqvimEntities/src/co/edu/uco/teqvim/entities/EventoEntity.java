@@ -9,7 +9,7 @@ import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
 
 public class EventoEntity {
-	
+
 	private static final EventoEntity DEFAULT_OBJECT = new EventoEntity();
 	private UUID identificador;
 	private String titulo;
@@ -20,7 +20,7 @@ public class EventoEntity {
 	private EstadoEventoEntity estado;
 	private TipoEventoEntity tipoEvento;
 	private EstudianteEntity estudiante;
-	
+
 	private EventoEntity() {
 		super();
 		setIdentificador(UtilUUID.DEFAULT_UUID);
@@ -34,9 +34,9 @@ public class EventoEntity {
 		setEstudiante(EstudianteEntity.getDefaultObject());
 	}
 
-	public EventoEntity(UUID identificador, String titulo, String descripcion, LocalDate fechaInicio, LocalDate fechaFin,
-			TipoDuracionEventoEntity duracionEvento, EstadoEventoEntity estado, TipoEventoEntity tipoEvento,
-			EstudianteEntity estudiante) {
+	public EventoEntity(UUID identificador, String titulo, String descripcion, LocalDate fechaInicio,
+			LocalDate fechaFin, TipoDuracionEventoEntity duracionEvento, EstadoEventoEntity estado,
+			TipoEventoEntity tipoEvento, EstudianteEntity estudiante) {
 		super();
 		setIdentificador(identificador);
 		setTitulo(titulo);
@@ -48,7 +48,21 @@ public class EventoEntity {
 		setTipoEvento(tipoEvento);
 		setEstudiante(estudiante);
 	}
-	
+
+	public static final EventoEntity createWithIdentificador(final UUID identificador) {
+		return new EventoEntity(identificador, UtilText.EMPTY, UtilText.EMPTY, UtilDate.DEFAULT_DATE,
+				UtilDate.DEFAULT_DATE, TipoDuracionEventoEntity.getDefaultObject(),
+				EstadoEventoEntity.getDefaultObject(), TipoEventoEntity.getDefaultObject(),
+				EstudianteEntity.getDefaultObject());
+	}
+
+	public static final EventoEntity createWithTitulo(final String titulo) {
+		return new EventoEntity(UtilUUID.DEFAULT_UUID, titulo, UtilText.EMPTY, UtilDate.DEFAULT_DATE,
+				UtilDate.DEFAULT_DATE, TipoDuracionEventoEntity.getDefaultObject(),
+				EstadoEventoEntity.getDefaultObject(), TipoEventoEntity.getDefaultObject(),
+				EstudianteEntity.getDefaultObject());
+	}
+
 	public static EventoEntity getDefaultObject() {
 		return DEFAULT_OBJECT;
 	}

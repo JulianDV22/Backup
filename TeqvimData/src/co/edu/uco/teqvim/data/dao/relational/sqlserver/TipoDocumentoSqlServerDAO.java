@@ -17,4 +17,10 @@ public final class TipoDocumentoSqlServerDAO implements TipoDocumentoDAO {
 		return null;
 	}
 
+	@Override
+	public void create(TipoDocumentoEntity entity) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

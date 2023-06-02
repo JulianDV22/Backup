@@ -1,6 +1,7 @@
 package co.edu.uco.teqvim.entities;
 
 import java.util.UUID;
+import java.util.concurrent.Flow.Publisher;
 
 import co.edu.uco.teqvim.crosscutting.utils.UtilText;
 import co.edu.uco.teqvim.crosscutting.utils.UtilUUID;
@@ -24,6 +25,14 @@ public class EstadoEstudianteEntity {
 		setIdentificador(identificador);
 		setNombre(nombre);
 		setDescripcion(descripcion);
+	}
+	
+	public static final EstadoEstudianteEntity createWithIdentificador(final UUID identificador) {
+		return new EstadoEstudianteEntity(identificador, UtilText.EMPTY, UtilText.EMPTY);
+	}
+	
+	public static final EstadoEstudianteEntity createWithNombre(final String nombre) {
+		return new EstadoEstudianteEntity(UtilUUID.DEFAULT_UUID, nombre, UtilText.EMPTY);
 	}
 
 	public static EstadoEstudianteEntity getDefaultObject() {

@@ -6,6 +6,8 @@ import co.edu.uco.teqvim.entities.TipoDuracionEventoEntity;
 
 public interface TipoDuracionEventoDAO {
 
+	void create(TipoDuracionEventoEntity entity);
+
 	List<TipoDuracionEventoEntity> read(TipoDuracionEventoEntity entity);
 
 }

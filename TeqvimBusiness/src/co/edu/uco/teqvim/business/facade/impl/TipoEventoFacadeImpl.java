@@ -7,6 +7,7 @@ import co.edu.uco.teqvim.business.business.impl.TipoEventoBusinessImpl;
 import co.edu.uco.teqvim.business.facade.TipoEventoFacade;
 import co.edu.uco.teqvim.crosscutting.exception.TeqvimBusinessException;
 import co.edu.uco.teqvim.crosscutting.exception.TeqvimException;
+import co.edu.uco.teqvim.crosscutting.utils.Messages.EventoFacadeImplMessages;
 import co.edu.uco.teqvim.crosscutting.utils.Messages.TipoEventoFacadeImplMessages;
 import co.edu.uco.teqvim.data.dao.factory.DAOFactory;
 import co.edu.uco.teqvim.data.dao.factory.Factory;
@@ -44,4 +45,30 @@ public final class TipoEventoFacadeImpl implements TipoEventoFacade{
 		}
 	}
 
+	@Override
+	public void register(TipoEventoDTO dto) {
+		try {
+			final var domain = TipoEventoAssembler.getInstance().toDomainFromDto(dto);
+
+			daoFactory.initTransaction();
+			business.register(domain);
+			daoFactory.commitTransaction();
+
+		} catch (final TeqvimException exception) {
+
+			daoFactory.cancelTransaction();
+			throw exception;
+
+		} catch (final Exception exception) {
+
+			daoFactory.cancelTransaction();
+
+			var userMessage = EventoFacadeImplMessages.REGISTER_EXCEPTION_USER_MESSAGE;
+			var technicalMessage = EventoFacadeImplMessages.REGISTER_EXCEPTION_TECHNICAL_MESSAGE;
+
+			throw TeqvimBusinessException.create(technicalMessage, userMessage, exception);
+		} finally {
+			daoFactory.closeConection();
+		}
+	}
 }

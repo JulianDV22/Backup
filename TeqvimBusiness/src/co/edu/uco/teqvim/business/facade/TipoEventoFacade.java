@@ -5,6 +5,8 @@ import co.edu.uco.teqvim.dto.TipoEventoDTO;
 
 public interface TipoEventoFacade {
 
+	void register(TipoEventoDTO dto);
+
 	List<TipoEventoDTO> list(TipoEventoDTO dto);
 
 }
