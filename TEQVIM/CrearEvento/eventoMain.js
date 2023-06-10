@@ -1,32 +1,28 @@
-const formulario = document.querySelector('form');
-const tituloInput = document.getElementById('titulo-evento');
-const descripcionInput = document.getElementById('descripcion-evento');
-const fechaInput = document.getElementById('fecha');
-const horaInicioInput = document.getElementById('horaInicial');
-const horaFinInput = document.getElementById('hora');
+document.getElementById('eventoForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita el envío del formulario
 
-//el evento y mostrar el alert
-function crearEvento(event) {
-  event.preventDefault();
+  // Recopila los datos del formulario
+  var titulo = document.getElementById('titulo-evento').value;
+  var descripcion = document.getElementById('descripcion-evento').value;
+  var duracionTodoElDia = document.getElementById('duracion-checkbox').checked;
+  var fecha = document.getElementById('fecha').value;
+  var horaInicial = document.getElementById('horaInicial').value;
+  var horaFinal = document.getElementById('hora').value;
+  var tipoEvento = document.getElementById('evento-list').value;
+  var frecuencia = document.getElementById('evento-list').value;
+  var notificacion = document.getElementById('evento-list').value;
 
-  //valores de los inputs
-  const titulo = tituloInput.value;
-  const descripcion = descripcionInput.value;
-  const fecha = fechaInput.value;
-  const horaInicio = horaInicioInput.value;
-  const horaFin = horaFinInput.value;
+  // Muestra un mensaje de éxito
+  alert('Se ha creado correctamente el evento');
 
-  // Mostrar los datos
-  console.log('Datos del evento:');
-  console.log('Título:', titulo);
-  console.log('Descripción:', descripcion);
-  console.log('Fecha:', fecha);
-  console.log('Hora de inicio:', horaInicio);
-  console.log('Hora de fin:', horaFin);
-
-  alert('Se ha creado exitosamente el evento');
-
-  formulario.reset();
-}
-
-formulario.addEventListener('submit', crearEvento);
+  // Muestra los datos en la consola
+  console.log('Título: ' + titulo);
+  console.log('Descripción: ' + descripcion);
+  console.log('Duración todo el día: ' + duracionTodoElDia);
+  console.log('Fecha: ' + fecha);
+  console.log('Hora Inicial: ' + horaInicial);
+  console.log('Hora Final: ' + horaFinal);
+  console.log('Tipo de Evento: ' + tipoEvento);
+  console.log('Frecuencia: ' + frecuencia);
+  console.log('Notificación: ' + notificacion);
+});
